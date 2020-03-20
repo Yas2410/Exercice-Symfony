@@ -53,8 +53,8 @@ private $articles = [
     public function accueil()
     {
 
-        return $this->render('accueil.html.twig', [
-            'articles' =>$this-> articles
+        return $this->render('index.html.twig', [
+            'articles' => $this->articles
         ]);
 
     }
@@ -65,7 +65,7 @@ private $articles = [
     public function accueilArticle($id)
     {
         return $this->render('articles.html.twig', [
-            'articles' =>$this-> articles [$id]
+            'articles' => $this->articles [$id]
         ]);
 
     }
