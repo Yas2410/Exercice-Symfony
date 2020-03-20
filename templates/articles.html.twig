@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <title>Exercice Blog Articles</title>
+</head>
+
+<body>
+
+<!--HEADER + LINK HOME-->
+<header>
+    <nav>
+        <ul class="menu">
+            <div><img class ="imgResp" src="https://symfony.com/logos/symfony_black_03.png" alt="Logo Symfony"></div>
+            <li><a href="{{ path("accueil") }}">ACCUEIL</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!--LIST OF ARTICLE/ID: La condition ci-après me permet d'afficher
+l'article souhaité en fonction de son statut : Si publié ou non-->
+<section>
+    {% if articles.published %}
+        <div id="margin">
+        <img src="{{ articles.image }}">
+        <h2>
+    {{ articles.title }}
+        </h2>
+        <p>
+    {{ articles.content }}
+        </p>
+    {% else %}
+        <p>
+            l'article demandé est introuvable
+        </p>
+    {% endif %}
+        </div>
+</section>
+
+<!--FOOTER-->
+<footer>
+    <nav>
+        <ul class="menu">
+            <li>LINK 1</li>
+            <li>LINK 2</li>
+            <li>LINK 3</li>
+        </ul>
+    </nav>
+</footer>
+
+</body>
+</html>
